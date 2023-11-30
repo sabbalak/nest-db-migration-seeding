@@ -1,7 +1,9 @@
 import { config } from 'dotenv';
-import { User } from 'src/resource/users/entities/user.entity';
-import { DataSourceOptions } from 'typeorm';
+import { User } from './../resource/users/entities/user.entity';
+import { DataSource, DataSourceOptions } from 'typeorm';
 import { SeederOptions } from 'typeorm-extension';
+import UserSeeder from './seeds/user.seeder';
+import userFactory from './factories/user.factory';
 
 config();
 
@@ -13,5 +15,8 @@ export const dataSourceOptions: DataSourceOptions & SeederOptions = {
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
   entities: [User],
-  synchronize: true,
+  seeds: [UserSeeder],
+  factories: [userFactory],
 };
+
+export default new DataSource(dataSourceOptions);

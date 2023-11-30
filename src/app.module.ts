@@ -5,7 +5,7 @@ import { DbModule } from './db/db.module';
 import { UsersModule } from './resource/users/users.module';
 
 @Module({
-  imports: [UsersModule, DbModule],
+  imports: [DbModule, UsersModule],
   controllers: [AppController],
   providers: [AppService],
 })
