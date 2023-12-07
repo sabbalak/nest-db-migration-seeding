@@ -24,7 +24,8 @@ $ npm run start:prod
 ```
 
 ### Note:
-While running `npm run start:dev` if you get error as ` ERROR  database is being accessed by other users`, disconnect the database from all means of conenct and try again. Worst case, 
+
+While running `npm run start:dev` if you get error as ` ERROR  database is being accessed by other users`, disconnect the database from all means of conenct and try again. Worst case, restart PSQL.
 
 ## Test
 
